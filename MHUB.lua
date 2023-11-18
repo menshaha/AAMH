@@ -15,6 +15,14 @@ MainSection:NewButton("Teleport To Lobby", "Click for teleport to lobby", functi
     tp:Teleport(8304191830)
 end)
 
+MainSection:NewToggle("low GPU mode", "ToggleInfo", function(state)
+    if state then
+        game:GetService("RunService"):Set3dRenderingEnabled(false)
+    else
+        game:GetService("RunService"):Set3dRenderingEnabled(true)
+    end
+end)
+
 --FARM
 local Farm = Window:NewTab("FARM")
 
