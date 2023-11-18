@@ -15,22 +15,15 @@ MainSection:NewButton("Teleport To Lobby", "Click for teleport to lobby", functi
     tp:Teleport(8304191830)
 end)
 
-MainSection:NewButton("Unlock fps", "Unlock your fps", function()
-    local vim = game:GetService("VirtualInputManager")
-    setfpscap(5000)
-    local inputservice = game:GetService("UserInputService")
-    local runservice = game:GetService("RunService")
-    inputservice.WindowFocusReleased:Connect(function() runservice:Set3dRenderingEnabled(false) end)
-    inputservice.WindowFocused:Connect(function() runservice:Set3dRenderingEnabled(true) end)
-end)
-
-MainSection:NewButton("lock fps", "lock your fps at 15", function()
-    local vim = game:GetService("VirtualInputManager")
-    setfpscap(15)
-    local inputservice = game:GetService("UserInputService")
-    local runservice = game:GetService("RunService")
-    inputservice.WindowFocusReleased:Connect(function() runservice:Set3dRenderingEnabled(false) end)
-    inputservice.WindowFocused:Connect(function() runservice:Set3dRenderingEnabled(true) end)
+MainSection:NewButton("Lock fps", "Lock your fps at 10", function()
+    local FPS = 15 -- CHANGE THIS TO FPS U WANT
+    local clock = tick()
+    
+    while true do
+       while clock + 1 / FPS > tick() do end
+       game:GetService('RunService').RenderStepped:wait()
+       clock = tick()
+    end
 end)
 
 MainSection:NewToggle("low GPU mode", "ToggleInfo", function(state)
