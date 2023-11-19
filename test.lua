@@ -4,8 +4,6 @@ local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
 local filename = "MHUB_Anime_Adventures.txt"
 
-saveSettings()
-
 --settings
 _G.settingsTable = {
     lowgpumode = false;
@@ -22,6 +20,8 @@ function saveSettings()
         print("-- SORRY SETTINGS CAN NOT BE SAVED DUE TO YOUR EXECUTOR -- ")
     end
 end
+
+saveSettings()
 
 print("Default $ Settings")
 for i,v in pairs(_G.settingsTable) do
