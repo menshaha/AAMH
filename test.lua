@@ -4,12 +4,6 @@ local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
 local filename = "MHUB_Anime_Adventures.txt"
 
-print("Default $ Settings")
-for i,v in pairs(_G.settingsTable) do
-    print(i,v)
-end
-print("--------")
-
 --LOCALS
 local tp = game:GetService("TeleportService")
 
