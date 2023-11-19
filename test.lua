@@ -122,3 +122,26 @@ EventSection:NewButton("Open 1 capsule", "Click for open 1 capsule", function()
     
     game:GetService("ReplicatedStorage").endpoints.client_to_server.use_item:InvokeServer(unpack(args))
 end)
+
+--banner
+
+local BannerSection = Misc:NewSection("BANNER")
+
+--open 10
+BannerSection:NewButton("Buy 10 opens", "Click for buy 10 opens", function()
+    local args = {
+        [1] = "EventClover",
+        [2] = "gems10"
+    }
+    
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_from_banner:InvokeServer(unpack(args))
+end)
+-- open 1
+BannerSection:NewButton("Buy 1 open", "Click for buy 1 open", function()
+    local args = {
+        [1] = "EventClover",
+        [2] = "gems"
+    }
+    
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_from_banner:InvokeServer(unpack(args))
+end)
