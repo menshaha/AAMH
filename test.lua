@@ -4,11 +4,6 @@ local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
 local filename = "MHUB_Anime_Adventures.txt"
 
---settings
-_G.settingsTable = {
-    lowgpumode = false;
-}
-
 print("Default $ Settings")
 for i,v in pairs(_G.settingsTable) do
     print(i,v)
