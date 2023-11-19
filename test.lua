@@ -2,6 +2,19 @@ local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
  
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
+local fileName = "MHUB_Anime_Adventures"
+
+--settings
+_G.settingsTable = {
+    lowgpumode = false;
+}
+
+print("Default $ Settings")
+for i,v in pairs(_G.settingsTable) do
+    print(i,v)
+end
+print("--------")
+
 --LOCALS
 local tp = game:GetService("TeleportService")
 
