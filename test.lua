@@ -2,7 +2,21 @@ local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
  
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
-local fileName = "MHUB_Anime_Adventures"
+local filename = "MHUB_Anime_Adventures.txt"
+
+function saveSettings()
+    pring("saving user settings...")
+    local json;
+    local HttpService = game:GetService("HttpService")
+    if (writefile) then
+        json = HttpService:JSONEncode(_G.settingsTable)
+        writefile(filename, json);
+    else
+        print("-- SORRY SETTINGS CAN NOT BE SAVED DUE TO YOUR EXECUTOR -- ")
+    end
+end
+
+loadSettings()
 
 --settings
 _G.settingsTable = {
