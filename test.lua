@@ -21,8 +21,6 @@ function saveSettings()
     end
 end
 
-saveSettings()
-
 print("Default $ Settings")
 for i,v in pairs(_G.settingsTable) do
     print(i,v)
