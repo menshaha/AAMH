@@ -2,8 +2,6 @@ local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
  
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
-local filename = "MHUB_Anime_Adventures.txt"
-
 --LOCALS
 local tp = game:GetService("TeleportService")
 
