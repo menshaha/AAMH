@@ -46,8 +46,9 @@ local Macro = Window:NewTab("MACRO")
 --MISC
 local Misc = Window:NewTab("MISC")
 
+--TEAMS IN MISC
 local TeamSection = Misc:NewSection("TEAMS")
-
+--team 1
 TeamSection:NewButton("Team 1", "Use for equip team 1", function()
     local args = {
         [1] = "1"
@@ -55,7 +56,7 @@ TeamSection:NewButton("Team 1", "Use for equip team 1", function()
     
     game:GetService("ReplicatedStorage").endpoints.client_to_server.switch_team_loadout:InvokeServer(unpack(args))
 end)
-
+--team 2
 TeamSection:NewButton("Team 2", "Use for equip team 2", function()
     local args = {
         [1] = "2"
@@ -63,7 +64,7 @@ TeamSection:NewButton("Team 2", "Use for equip team 2", function()
     
     game:GetService("ReplicatedStorage").endpoints.client_to_server.switch_team_loadout:InvokeServer(unpack(args))
 end)
-
+--team 3
 TeamSection:NewButton("Team 3", "Use for equip team 3", function()
     local args = {
         [1] = "3"
@@ -71,7 +72,7 @@ TeamSection:NewButton("Team 3", "Use for equip team 3", function()
     
     game:GetService("ReplicatedStorage").endpoints.client_to_server.switch_team_loadout:InvokeServer(unpack(args))
 end)
-
+--team 4
 TeamSection:NewButton("Team 4", "Use for equip team 4", function()
     local args = {
         [1] = "4"
@@ -79,7 +80,7 @@ TeamSection:NewButton("Team 4", "Use for equip team 4", function()
     
     game:GetService("ReplicatedStorage").endpoints.client_to_server.switch_team_loadout:InvokeServer(unpack(args))
 end)
-
+--team 5
 TeamSection:NewButton("Team 5", "Use for equip team 5", function()
     local args = {
         [1] = "5"
@@ -87,11 +88,37 @@ TeamSection:NewButton("Team 5", "Use for equip team 5", function()
     
     game:GetService("ReplicatedStorage").endpoints.client_to_server.switch_team_loadout:InvokeServer(unpack(args))
 end)
-
+--team 6
 TeamSection:NewButton("Team 6", "Use for equip team 6", function()
     local args = {
         [1] = "6"
     }
     
     game:GetService("ReplicatedStorage").endpoints.client_to_server.switch_team_loadout:InvokeServer(unpack(args))
+end)
+
+--EVENT IN MISC
+
+local EventSection = Misc:NewSection("EVENT")
+--open 10
+EventSection:NewButton("Open 10 capsules", "Click for open 10 capsules", function()
+    local args = {
+        [1] = "capsule_halloween2",
+        [2] = {
+            ["use10"] = true
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.use_item:InvokeServer(unpack(args))
+end)
+-- open 1
+EventSection:NewButton("Open 1 capsule", "Click for open 1 capsule", function()
+    local args = {
+        [1] = "capsule_halloween2",
+        [2] = {
+            ["use10"] = false
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.use_item:InvokeServer(unpack(args))
 end)
