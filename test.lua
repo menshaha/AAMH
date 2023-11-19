@@ -10,7 +10,7 @@ _G.settingsTable = {
 }
 
 function saveSettings()
-    pring("saving user settings...")
+    print("saving user settings...")
     local json;
     local HttpService = game:GetService("HttpService")
     if (writefile) then
