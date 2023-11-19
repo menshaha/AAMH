@@ -16,8 +16,6 @@ function saveSettings()
     end
 end
 
-loadSettings()
-
 --settings
 _G.settingsTable = {
     lowgpumode = false;
