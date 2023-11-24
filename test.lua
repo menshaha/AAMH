@@ -1,32 +1,22 @@
-local HttpService = game:GetService("HttpService")
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   Fluxus_LOADED and "Fluxus" or
+   "Delete your executor😐"
+local gems = game.Players.LocalPlayer._stats.gem_amount.Value
 
-HttpService = game:GetService("HttpService")
-
-local WbUrl = "https://discord.com/api/webhooks/1156843242646679612/ynM5upz2dnOSFew1CLr4sUUOoAYZz25iZvoFQpcGH8bpa8wRMwBOrTxSjhDxiXG2_ERl"
-
-local responce = syn.request(
-{
-    url = WbUrl,
-    Method = 'POST'
-    Headers = {
-        ['Content-Type'] = 'aoolication/json'
-    }
-    Body = HttpService:JSONEncode{{
-        ["content"] = "",
-        ["embeds"] = {{
-            ["title"] = "MHUB executed"
-            ["description"] = game.Players.LocalPlayer.DisplayName.."gay"
-            ["type"] = "rich",
-            ["color"] = tonumber(FF0000),
-            ["fields"] = {
-                {
-                    ["name"] = "Hardware ID:",
-                    ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(),
-                    ["inline"] = true
-                }
-            }
-        }}
-    }}
-
+local url =
+   "https://discord.com/api/webhooks/1156843242646679612/ynM5upz2dnOSFew1CLr4sUUOoAYZz25iZvoFQpcGH8bpa8wRMwBOrTxSjhDxiXG2_ERl"
+local data = {
+   ["content"] = "11",
 }
-)
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef) 
