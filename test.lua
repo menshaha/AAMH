@@ -7,8 +7,6 @@ local gems = player._stats.gem_amount.Value
 local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
 local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
---REWARD
-local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
 
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
@@ -29,8 +27,8 @@ end)
 
 WebHookSection:NewButton("Check stats", "Click for check stats", function()
     local Embed = {
-        ["title"] = "MHUB STATS & REWARDS",
-        ["description"] = "STATS & REWARDS",
+        ["title"] = "MHUB CHECK STATS",
+        ["description"] = "Your stats",
         ["type"] = "rich",
         ["color"] = tonumber(0xDC381F),
         ["thumbnail"] = {
@@ -44,13 +42,7 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
                 ["name"] = "STATS",
                 ["value"] = "USER: " .. user .. " 💘" .. "\n\nGEMS: " .. gems .. " 💎" .. "\n\nGOLD: " .. gold .. " 💰" .. "\n\nTROPHIES: " .. trophie .. " 🏆",
                 ["inline"] = false
-            },
-            {
-                ["name"] = "REWARD",
-                ["value"] = rexp,
-                ["inline"] = false
             }
-        
         },
         ["footer"] = {
             ["text"] = "",
@@ -69,14 +61,6 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
         },
         Body = game:GetService('HttpService'):JSONEncode({ content = Content, embeds = { Embed } }),
     }
-end)
-
-WebHookSection:NewToggle("hide user in webhook", "webhook dont use ur user in STATS & REWARDS", function(state)
-    if state then
-        player.DisplayName = "I dont say you it😈"
-    else
-        player.DisplayName.Text
-    end
 end)
 
 MainSection:NewButton("Teleport to lobby", "Click for teleport to lobby", function()
