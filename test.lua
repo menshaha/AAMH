@@ -7,8 +7,7 @@ local gems = player._stats.gem_amount.Value
 local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
 local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
-
---reward
+--REWARD
 local rexp = player.PlayerGui.ResultsUI.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
 
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
@@ -31,7 +30,7 @@ end)
 WebHookSection:NewButton("Check stats", "Click for check stats", function()
     local Embed = {
         ["title"] = "MHUB STATS & REWARDS",
-        ["description"] = "Your stats",
+        ["description"] = "STATS & REWARDS",
         ["type"] = "rich",
         ["color"] = tonumber(0xDC381F),
         ["thumbnail"] = {
@@ -47,7 +46,7 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
                 ["inline"] = false
             }
             {
-                ["name"] = "REWARD",
+                ["name"] = "REWARDS",
                 ["value"] = rexp,
                 ["inline"] = false
             }
@@ -108,16 +107,6 @@ local Farm = Window:NewTab("FARM")
 
 --AUTOPLAY
 local Autoplay = Window:NewTab("AUTOPLAY")
-local BuffSection = Autoplay:NewSection("Buff")
-
-BuffSection:NewToggle("Auto Buff", "Auto inf buffs with Leafy | Orwin | Wenda", function(state)
-    if state then
-        print(buff starting)
-    else
-        print(Buff stopping)
-    end
-end)
-
 
 --MACRO
 local Macro = Window:NewTab("MACRO")
