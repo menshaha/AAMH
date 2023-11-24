@@ -1,5 +1,6 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local player = game.Players.LocalPlayer
+local Display = player.DisplayName.Text
 local OSTime = os.time()
 
 --STATS
@@ -71,11 +72,11 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
     }
 end)
 
-WebHookSection:NewToggle("ping when complete", "ping you when you finish", function(state)
+WebHookSection:NewToggle("hide user in webhook", "webhook dont use ur user in STATS & REWARDS", function(state)
     if state then
-        print("t4e5435345")
+        Display = I dont say you it😈
     else
-        print("t4e5435345")
+        Display
     end
 end)
 
