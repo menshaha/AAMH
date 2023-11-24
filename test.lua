@@ -1,5 +1,7 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local player = game.Players.LocalPlayer
+local DisplayName = player.DisplayName.Text
+local username = game.workspace..DisplayName.Head._overhead.Frame.Name_Frame.Name_Text.Text
 local OSTime = os.time()
 
 --STATS
@@ -97,9 +99,9 @@ end)
 
 HideSection:NewToggle("Hide Name", "ToggleInfo", function(state)
     if state then
-        player.DisplayName = "MHUB ON TOP"
+        player.DisplayName.Text = "MHUB ON TOP"
     else
-        player.DisplayName = player.DisplayName.Text
+        player.DisplayName.Text = originalName
     end
 end)
 
