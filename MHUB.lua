@@ -48,7 +48,7 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
             },
             {
                 ["name"] = "STATS",
-                ["value"] = rexp .. "\n\n+ GOLD " .. rgold .. " 💰",
+                ["value"] = rexp .. "\n\n" .. rgold .. " GOLD 💰",
                 ["inline"] = false
             }
         },
