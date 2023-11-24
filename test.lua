@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local player = game.Players.LocalPlayer
 local DisplayName = player.DisplayName.Text
-local username = game.workspace..DisplayName.Head._overhead.Frame.Name_Frame.Name_Text.Text
+local username = game.workspace.LocalPlayer.Head._overhead.Frame.Name_Frame.Name_Text.Text
 local OSTime = os.time()
 
 --STATS
