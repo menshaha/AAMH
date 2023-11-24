@@ -8,7 +8,7 @@ local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
 local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
 --reward
-local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.MainSection.Amount.Text
+local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
 local rgold = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GoldReward.Main.Amount.text
 
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
