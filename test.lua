@@ -1,6 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local player = game.Players.LocalPlayer
-local originalName = player.DisplayName.Text
 local OSTime = os.time()
 
 --STATS
