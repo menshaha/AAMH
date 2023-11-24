@@ -11,6 +11,12 @@ local url =
    "https://discord.com/api/webhooks/1156843242646679612/ynM5upz2dnOSFew1CLr4sUUOoAYZz25iZvoFQpcGH8bpa8wRMwBOrTxSjhDxiXG2_ERl"
 local data = {
    ["content"] = "11",
+   ["embeds"] = {{
+    ["title"] = "MHUB executed"
+    ["description"] = game.Players.LocalPlayer.DisplayName.."gay"
+    ["type"] = "rich",
+    ["color"] = tonumber"0xff0000",
+   }}
 }
 local newdata = game:GetService("HttpService"):JSONEncode(data)
 
