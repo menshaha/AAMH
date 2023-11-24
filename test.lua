@@ -1,6 +1,5 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local player = game.Players.LocalPlayer
-local Display = player.DisplayName.Text
 local OSTime = os.time()
 
 --STATS
@@ -74,9 +73,9 @@ end)
 
 WebHookSection:NewToggle("hide user in webhook", "webhook dont use ur user in STATS & REWARDS", function(state)
     if state then
-        Display = I dont say you it😈
+        player.DisplayName = "I dont say you it😈"
     else
-        Display
+        player.DisplayName.Text
     end
 end)
 
