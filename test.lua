@@ -10,7 +10,7 @@ local webhookcheck =
 local url =
    "https://discord.com/api/webhooks/1156843242646679612/ynM5upz2dnOSFew1CLr4sUUOoAYZz25iZvoFQpcGH8bpa8wRMwBOrTxSjhDxiXG2_ERl"
 local data = {
-   ["content"] = "gems",
+   ["content"] = "url",
 }
 local newdata = game:GetService("HttpService"):JSONEncode(data)
 
