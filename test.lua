@@ -86,15 +86,6 @@ MainSection:NewToggle("low GPU mode", "ToggleInfo", function(state)
     end
 end)
 
---FARM
-local Farm = Window:NewTab("FARM")
-
---AUTOPLAY
-local Autoplay = Window:NewTab("AUTOPLAY")
-
---MACRO
-local Macro = Window:NewTab("MACRO")
-
 --MISC
 local Misc = Window:NewTab("MISC")
 
