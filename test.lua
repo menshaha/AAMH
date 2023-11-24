@@ -97,11 +97,15 @@ MainSection:NewToggle("low GPU mode", "ToggleInfo", function(state)
     end
 end)
 
+local originalName = player.DisplayName
+local HideName = false
+
 HideSection:NewToggle("Hide Name", "ToggleInfo", function(state)
-    if state then
-        player.DisplayName.Text = "MHUB ON TOP"
+    HideName = state
+    if HideName then
+        username = "MHUB ON TOP"
     else
-        player.DisplayName.Text = originalName
+        player.DisplayName = originalName
     end
 end)
 
