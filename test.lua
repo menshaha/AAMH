@@ -1,4 +1,5 @@
 local OSTime = os.time()
+local gems = players.localplayer.leaderstats._stats.gem_amount.Value
 local Time = os.date('!*t', OSTime)
 local Embed = {
 			["title"] = "__**Test Message.**__",
@@ -14,7 +15,7 @@ local Embed = {
 			["fields"] = {
 			    	{
 					["name"] = "<$MHUB$>",
-					["value"] = player.LocalPlayer.leaderstats._stats.gems_amount.Value,
+					["value"] = gems,
 					["inline"] = true
 				}
 			},
