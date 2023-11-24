@@ -1,5 +1,12 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
- 
+local player = game.Players.LocalPlayer
+local OSTime = os.time()
+--STATS
+local gems = player._stats.gem_amount.Value
+local gold = player._stats.gold_amount.Value
+local trophie = player._stats.trophies.Value
+local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
+
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
 --LOCALS
@@ -12,8 +19,44 @@ local MainSection = Main:NewSection("MAIN")
 
 local WebHookSection = Main:NewSection("WEBHOOK")
 
+WebHookSection:NewTextBox("WEBHOOK LINK", "Paste your weebhook link", function(webhookurl)
+	local webhookurl = (webhookurl)
+end)
+
 WebHookSection:NewButton("Check stats", "Click for check stats", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/menshaha/AAMH/main/webhook.lua"))()
+    ----------------------------------------------------
+    local Embed = {
+                ["title"] = "MHUB CHECK STATS",
+                ["description"] = "Your stats",
+                ["type"] = "rich",
+                ["color"] = tonumber(0xDC381F),
+                        ["thumbnail"] = {
+                    ["url"] = "https://www.roblox.com/asset-thumbnail/image?assetId="..game.PlaceId.."&width=768&height=432"
+                },
+                ["image"] = {
+                    ["url"] = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAd-496IWpbYyF-M1cqTS7t5K3E7-Bpet4I650wjhN&s"
+                },
+                ["fields"] = {
+                        {
+                        ["name"] = "STATS",
+                        ["value"] = "USER: " .. user .. " 💘" .."\n\nGEMS: " .. gems .. " 💎" .. "\n\nGOLD: " .. gold .. " 💰" .. "\n\nTROPHIES: " .. trophie .. " 🏆",
+                        ["inline"] = false
+                    }
+                },
+                ["footer"] = {
+                    ["text"] = "",
+                    ["icon_url"] = ""
+                },
+                ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
+    };
+    (syn and syn.request or http_request or http.request) {
+        Url = (webhookurl); -- change your webhook 
+        Method = 'POST';
+        Headers = {
+            ['Content-Type'] = 'application/json';
+        };
+        Body = game:GetService'HttpService':JSONEncode({content = Content; embeds = {Embed}; });
+    };
 end)
 
 MainSection:NewButton("Teleport to lobby", "Click for teleport to lobby", function()
