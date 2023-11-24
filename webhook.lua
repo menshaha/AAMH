@@ -8,8 +8,8 @@ local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
 ----------------------------------------------------
 local Time = os.date('!*t', OSTime)
 local Embed = {
-			["title"] = "MHUB TEST",
-			["description"] = "Test Message.",
+			["title"] = "MHUB CHECK STATS",
+			["description"] = "Your stats",
 			["type"] = "rich",
 			["color"] = tonumber(0xDC381F),
 	                ["thumbnail"] = {
