@@ -10,7 +10,13 @@ local Main = Window:NewTab("MAIN")
 
 local MainSection = Main:NewSection("MAIN")
 
-MainSection:NewButton("Teleport To Lobby", "Click for teleport to lobby", function()
+local WebHookSection = Main:NewSection("WEBHOOK")
+
+WebHookSection:NewButton("Check stats", "Click for check stats", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/menshaha/AAMH/main/webhook.lua"))()
+end)
+
+MainSection:NewButton("Teleport to lobby", "Click for teleport to lobby", function()
     print("Teleporting...")
     tp:Teleport(8304191830)
 end)
