@@ -95,14 +95,6 @@ MainSection:NewToggle("low GPU mode", "ToggleInfo", function(state)
     end
 end)
 
-HideSection:NewToggle("Hide Name", "ToggleInfo", function(state)
-    if state then
-        player.DisplayName = "MHUB ON TOP"
-    else
-        player.DisplayName = player.DisplayName.Text
-    end
-end)
-
 --FARM
 local Farm = Window:NewTab("FARM")
 
