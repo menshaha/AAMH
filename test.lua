@@ -1,28 +1,37 @@
-local webhookcheck =
-   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
-   secure_load and "Sentinel" or
-   KRNL_LOADED and "Krnl" or
-   SONA_LOADED and "Sona" or
-   Fluxus_LOADED and "Fluxus" or
-   "Delete your executor😐"
-local gems = game.Players.LocalPlayer._stats.gem_amount.Value
-
-local url =
-   "https://discord.com/api/webhooks/1156843242646679612/ynM5upz2dnOSFew1CLr4sUUOoAYZz25iZvoFQpcGH8bpa8wRMwBOrTxSjhDxiXG2_ERl"
-local data = {
-   ["content"] = "11",
-   ["embeds"] = {{
-    ["title"] = "MHUB executed"
-    ["description"] = game.Players.LocalPlayer.DisplayName.."gay"
-    ["type"] = "rich",
-    ["color"] = tonumber"0xff0000",
-   }}
-}
-local newdata = game:GetService("HttpService"):JSONEncode(data)
-
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(abcdef) 
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local OSTime = os.time()
+local Time = os.date('!*t', OSTime)
+local Embed = {
+			["title"] = "__**Test Message.**__",
+			["description"] = "Test Webhook",
+			["type"] = "rich",
+			["color"] = tonumber(0xffff00),
+	                ["thumbnail"] = {
+				["url"] = "https://www.roblox.com/asset-thumbnail/image?assetId="..game.PlaceId.."&width=768&height=432"
+			},
+			["image"] = {
+				["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=250&y=250&Format=Png&username="..plr.Name
+			},
+			["fields"] = {
+			    	{
+					["name"] = "__Test__",
+					["value"] = "Test Message",
+					["inline"] = true
+				}
+			},
+			["footer"] = {
+			    ["text"] = "Test Webhook",
+			    ["icon_url"] = ""
+			},
+			["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
+};
+(syn and syn.request or http_request or http.request) {
+    Url = "https://discord.com/api/webhooks/1156843242646679612/ynM5upz2dnOSFew1CLr4sUUOoAYZz25iZvoFQpcGH8bpa8wRMwBOrTxSjhDxiXG2_ERl''; -- change your webhook 
+    Method = 'POST';
+    Headers = {
+        ['Content-Type'] = 'application/json';
+    };
+    Body = game:GetService'HttpService':JSONEncode({content = Content; embeds = {Embed}; });
+};
