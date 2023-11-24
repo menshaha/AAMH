@@ -7,6 +7,9 @@ local gems = player._stats.gem_amount.Value
 local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
 local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
+--reward
+local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.Amount.Text
+local rgold = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GoldReward.Main.Amount.text
 
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
@@ -27,8 +30,8 @@ end)
 
 WebHookSection:NewButton("Check stats", "Click for check stats", function()
     local Embed = {
-        ["title"] = "MHUB CHECK STATS",
-        ["description"] = "Your stats",
+        ["title"] = "MHUB STATS & REWARD",
+        ["description"] = "Your stats & rewards",
         ["type"] = "rich",
         ["color"] = tonumber(0xDC381F),
         ["thumbnail"] = {
@@ -41,6 +44,11 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
             {
                 ["name"] = "STATS",
                 ["value"] = "USER: " .. user .. " 💘" .. "\n\nGEMS: " .. gems .. " 💎" .. "\n\nGOLD: " .. gold .. " 💰" .. "\n\nTROPHIES: " .. trophie .. " 🏆",
+                ["inline"] = false
+            },
+            {
+                ["name"] = "STATS",
+                ["value"] = rexp .. "\n\n+ GOLD " .. rgold .. " 💰",
                 ["inline"] = false
             }
         },
