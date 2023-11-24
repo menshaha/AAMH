@@ -8,7 +8,7 @@ local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
 local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
 --REWARD
-local rexp = player.PlayerGui.ResultsUI.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
+local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
 
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
@@ -44,12 +44,13 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
                 ["name"] = "STATS",
                 ["value"] = "USER: " .. user .. " 💘" .. "\n\nGEMS: " .. gems .. " 💎" .. "\n\nGOLD: " .. gold .. " 💰" .. "\n\nTROPHIES: " .. trophie .. " 🏆",
                 ["inline"] = false
-            }
+            },
             {
-                ["name"] = "REWARDS",
+                ["name"] = "REWARD",
                 ["value"] = rexp,
                 ["inline"] = false
             }
+        
         },
         ["footer"] = {
             ["text"] = "",
