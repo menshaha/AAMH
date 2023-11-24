@@ -1,6 +1,3 @@
---[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
 local OSTime = os.time()
 local Time = os.date('!*t', OSTime)
 local Embed = {
@@ -12,17 +9,17 @@ local Embed = {
 				["url"] = "https://www.roblox.com/asset-thumbnail/image?assetId="..game.PlaceId.."&width=768&height=432"
 			},
 			["image"] = {
-				["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=250&y=250&Format=Png&username="..plr.Name
+				["url"] = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAd-496IWpbYyF-M1cqTS7t5K3E7-Bpet4I650wjhN&s"
 			},
 			["fields"] = {
 			    	{
-					["name"] = "__Test__",
-					["value"] = "Test Message",
+					["name"] = "<$MHUB$>",
+					["value"] = player.LocalPlayer.leaderstats._stats.gems_amount.Value,
 					["inline"] = true
 				}
 			},
 			["footer"] = {
-			    ["text"] = "Test Webhook",
+			    ["text"] = "",
 			    ["icon_url"] = ""
 			},
 			["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
