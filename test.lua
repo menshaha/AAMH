@@ -16,6 +16,7 @@ local tp = game:GetService("TeleportService")
 --MAIN
 local Main = Window:NewTab("MAIN")
 local MainSection = Main:NewSection("MAIN")
+local HideSection = Main:NewSection("Hide Yourself")
 
 local WebhookLink
 
@@ -62,6 +63,14 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
     }
 end)
 
+WebHookSection:NewToggle("ping when complete", "ping you when you finish", function(state)
+    if state then
+        print("t4e5435345")
+    else
+        print("t4e5435345")
+    end
+end)
+
 MainSection:NewButton("Teleport to lobby", "Click for teleport to lobby", function()
     print("Teleporting...")
     tp:Teleport(8304191830)
@@ -83,6 +92,14 @@ MainSection:NewToggle("low GPU mode", "ToggleInfo", function(state)
         game:GetService("RunService"):Set3dRenderingEnabled(false)
     else
         game:GetService("RunService"):Set3dRenderingEnabled(true)
+    end
+end)
+
+HideSection:NewToggle("Hide Name", "ToggleInfo", function(state)
+    if state then
+        player.DisplayName = "MHUB ON TOP"
+    else
+        player.DisplayName = player.DisplayName.Text
     end
 end)
 
