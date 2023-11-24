@@ -1,11 +1,12 @@
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local player = game.Players.LocalPlayer
-local DisplayName = player.DisplayName.Text
-local username = game.workspace.LocalPlayer.Head._overhead.Frame.Name_Frame.Name_Text.Text
+local originalName = player.DisplayName.Text
+local username = game.workspace..originalName.Head._overhead.Frame.Name_Frame.Name_Text.Text
 local OSTime = os.time()
 
 --STATS
 local gems = player._stats.gem_amount.Value
+local lvl = game.workspace..originalName.Head._overhead.Frame.Level_Frame.Level.Text
 local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
 local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
@@ -42,7 +43,7 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
         ["fields"] = {
             {
                 ["name"] = "STATS",
-                ["value"] = "USER: " .. user .. " 💘" .. "\n\nGEMS: " .. gems .. " 💎" .. "\n\nGOLD: " .. gold .. " 💰" .. "\n\nTROPHIES: " .. trophie .. " 🏆",
+                ["value"] = "USER: " .. user .. " 💘" .. "\n\nLEVEL: ".. lvl .. " 🤯" .. "\n\nGEMS: " .. gems .. " 💎" .. "\n\nGOLD: " .. gold .. " 💰" .. "\n\nTROPHIES: " .. trophie .. " 🏆",
                 ["inline"] = false
             }
         },
@@ -97,15 +98,14 @@ MainSection:NewToggle("low GPU mode", "ToggleInfo", function(state)
     end
 end)
 
-local originalName = player.DisplayName
-local HideName = false
-
 HideSection:NewToggle("Hide Name", "ToggleInfo", function(state)
-    HideName = state
-    if HideName then
-        username = "MHUB ON TOP"
+    if state then
+        -- Изменяем никнейм только если Head и _overhead.Frame.Name_Frame.Name_Text.Text доступны
+        if player.Character and player.Character:FindFirstChild("Head") and player.Character.Head:FindFirstChild("_overhead") and player.Character.Head._overhead:FindFirstChild("Frame") and player.Character.Head._overhead.Frame:FindFirstChild("Name_Frame") and player.Character.Head._overhead.Frame.Name_Frame:FindFirstChild("Name_Text") then
+            player.DisplayName.Text = "MHUB ON TOP"
+        end
     else
-        player.DisplayName = originalName
+        player.DisplayName.Text = originalName
     end
 end)
 
