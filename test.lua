@@ -1,6 +1,8 @@
 local HttpService = game:GetService("HttpService")
+
 HttpService = game:GetService("HttpService")
-WbUrl = "https://discord.com/api/webhooks/1156843242646679612/ynM5upz2dnOSFew1CLr4sUUOoAYZz25iZvoFQpcGH8bpa8wRMwBOrTxSjhDxiXG2_ERl"
+
+local WbUrl = "https://discord.com/api/webhooks/1156843242646679612/ynM5upz2dnOSFew1CLr4sUUOoAYZz25iZvoFQpcGH8bpa8wRMwBOrTxSjhDxiXG2_ERl"
 
 local responce = syn.request(
 {
@@ -15,7 +17,14 @@ local responce = syn.request(
             ["title"] = "MHUB executed"
             ["description"] = game.Players.LocalPlayer.DisplayName.."gay"
             ["type"] = "rich",
-            [""]
+            ["color"] = tonumber(FF0000),
+            ["fields"] = {
+                {
+                    ["name"] = "Hardware ID:",
+                    ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(),
+                    ["inline"] = true
+                }
+            }
         }}
     }}
 
