@@ -7,6 +7,12 @@ local gems = player._stats.gem_amount.Value
 local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
 local user = player.DisplayName
+--map info
+local lvname = player.PlayerGui.ResultsUI.Holder.LevelName.Text
+local difficult = player.PlayerGui.ResultsUI.Holder.Middle.Difficulty.Text
+local finish_or_not = player.PlayerGui.ResultsUI.Holder.Title.Text
+local timecomp = player.PlayerGui.ResultsUI.Holder.Middle.Timer.Text
+
 --reward
 local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
 local rgold = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GoldReward.Main.Amount.Text
@@ -54,8 +60,13 @@ local function sendWebhook()
                 ["inline"] = false
             },
             {
-                ["name"] = "STATS",
+                ["name"] = "REWARD",
                 ["value"] = rexp .. "\n\n" .. rgems .. " GEMS💎" .. "\n\n" .. rgold .. " GOLD 💰",
+                ["inline"] = false
+            }
+            {
+                ["name"] = "MAP",
+                ["value"] = lvname .. " (" .. difficult .. ")" .. " - " .. finish_or_not .. "\n\n Time:" .. timecomp,
                 ["inline"] = false
             }
         },
