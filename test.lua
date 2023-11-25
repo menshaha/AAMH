@@ -6,7 +6,7 @@ local OSTime = os.time()
 local gems = player._stats.gem_amount.Value
 local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
-local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
+local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Name
 --reward
 local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
 local rgold = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GoldReward.Main.Amount.text
