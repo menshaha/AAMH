@@ -40,6 +40,44 @@ WebHookSection:NewTextBox("WEBHOOK LINK", "Paste your webhook link", function(va
     WebhookLink = value
 end)
 
+local function TestWeebhook()
+    local Embed = {
+        ["title"] = "MHUB WEBHOOK TEST",
+        ["description"] = "Your WebHook work",
+        ["type"] = "rich",
+        ["color"] = tonumber(0xDC381F),
+        ["thumbnail"] = {
+            ["url"] = "https://www.roblox.com/asset-thumbnail/image?assetId="..game.PlaceId.."&width=768&height=432"
+        },
+        ["image"] = {
+            ["url"] = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAd-496IWpbYyF-M1cqTS7t5K3E7-Bpet4I650wjhN&s"
+        },
+        ["fields"] = {
+            {
+                ["name"] = "TEST",
+                ["value"] = "MHUB WEBHOOK",
+                ["inline"] = false
+            }
+        },
+        ["footer"] = {
+            ["text"] = "",
+            ["icon_url"] = ""
+        },
+        ["timestamp"] = os.date('!%Y-%m-%dT%H:%M:%SZ'),
+    }
+
+    local Content = ""
+    
+    http_request {
+        Url = WebhookLink,
+        Method = 'POST',
+        Headers = {
+            ['Content-Type'] = 'application/json',
+        },
+        Body = game:GetService('HttpService'):JSONEncode({ content = Content, embeds = { Embed } }),
+    }
+end
+
 -- Определение функции отправки вебхука
 local function sendWebhook()
     local Embed = {
@@ -98,8 +136,8 @@ resultsUI:GetPropertyChangedSignal("Enabled"):Connect(function()
 end)
 
 -- Добавление кнопки и вызов функции отправки вебхука
-WebHookSection:NewButton("Check stats", "Click for check stats", function()
-    sendWebhook()
+WebHookSection:NewButton("Test Weebhook", "Click for test weebhook", function()
+    TestWeebhook()
 end)
 
 MainSection:NewButton("Teleport to lobby", "Click for teleport to lobby", function()
