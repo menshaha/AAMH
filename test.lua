@@ -6,11 +6,11 @@ local OSTime = os.time()
 local gems = player._stats.gem_amount.Value
 local gold = player._stats.gold_amount.Value
 local trophie = player._stats.trophies.Value
-local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Name
+local user = player.DisplayName
 --reward
 local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
-local rgold = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GoldReward.Main.Amount.text
-local rgems = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GemReward.Main.Amount.text
+local rgold = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GoldReward.Main.Amount.Text
+local rgems = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GemReward.Main.Amount.Text
 
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
@@ -21,6 +21,11 @@ local tp = game:GetService("TeleportService")
 local Main = Window:NewTab("MAIN")
 local MainSection = Main:NewSection("MAIN")
 local HideSection = Main:NewSection("Hide Yourself")
+--weebhook 
+local resultsUI = player.PlayerGui.ResultsUI
+
+-- Установка стандартного значения Enabled
+resultsUI.Enabled = false
 
 local WebhookLink
 
@@ -29,7 +34,8 @@ WebHookSection:NewTextBox("WEBHOOK LINK", "Paste your webhook link", function(va
     WebhookLink = value
 end)
 
-WebHookSection:NewButton("Check stats", "Click for check stats", function()
+-- Определение функции отправки вебхука
+local function sendWebhook()
     local Embed = {
         ["title"] = "MHUB STATS & REWARD",
         ["description"] = "Your stats & rewards",
@@ -57,7 +63,7 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
             ["text"] = "",
             ["icon_url"] = ""
         },
-        ["timestamp"] = os.date('!%Y-%m-%dT%H:%M:%SZ'),  -- исправлено в этой строке
+        ["timestamp"] = os.date('!%Y-%m-%dT%H:%M:%SZ'),
     }
 
     local Content = ""
@@ -70,6 +76,19 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
         },
         Body = game:GetService('HttpService'):JSONEncode({ content = Content, embeds = { Embed } }),
     }
+end
+
+resultsUI:GetPropertyChangedSignal("Enabled"):Connect(function()
+    if resultsUI.Enabled then
+        -- Если ResultsUI стало видимым, вызываем функцию sendWebhook
+        wait(0.5)
+        sendWebhook()
+    end
+end)
+
+-- Добавление кнопки и вызов функции отправки вебхука
+WebHookSection:NewButton("Check stats", "Click for check stats", function()
+    sendWebhook()
 end)
 
 MainSection:NewButton("Teleport to lobby", "Click for teleport to lobby", function()
