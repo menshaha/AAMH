@@ -10,6 +10,7 @@ local user = player.PlayerGui.ProfileGUI.Main.ProfileBanner.PlayerName.Text
 --reward
 local rexp = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.XPReward.Main.Amount.Text
 local rgold = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GoldReward.Main.Amount.text
+local rgems = player.PlayerGui.ResultsUI.Holder.LevelRewards.ScrollingFrame.GemReward.Main.Amount.text
 
 local Window = Library.CreateLib("✨ MHUB AA", "BloodTheme")
 
@@ -48,7 +49,7 @@ WebHookSection:NewButton("Check stats", "Click for check stats", function()
             },
             {
                 ["name"] = "STATS",
-                ["value"] = rexp .. "\n\n" .. rgold .. "GOLD 💰",
+                ["value"] = rexp .. "\n\n" .. rgems .. " GEMS💎" .. "\n\n" .. rgold .. " GOLD 💰",
                 ["inline"] = false
             }
         },
