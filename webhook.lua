@@ -1,29 +1,3 @@
-Skip to content
-ultrahub7
-/
-Ultra-Hub
-
-Type / to search
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-Commit
-Add files via upload
- main
-@ultrahub7
-ultrahub7 committed 2 weeks ago 
-1 parent ca58a29
-commit 570b783
-Showing 1 changed file with 4,716 additions and 0 deletions.
- 4,716 changes: 4,716 additions & 0 deletions4,716  
-UH.txt
-@@ -0,0 +1,4716 @@
-
 if not game:IsLoaded() then game.Loaded:Wait() end
 repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
 
