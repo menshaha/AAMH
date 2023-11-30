@@ -4338,7 +4338,7 @@ local oldPlayerStats = {
 	Gems = player._stats.gem_amount.Value,
 	Gold = player._stats.gold_amount.Value,
 	PlayerXP = player._stats.player_xp.Value,
-	Candy = player._stats._resourceCandies.Value
+	Candy = player._stats._resourceCandies.Value,
 }
 
 local contentNewSecretItem = ""
@@ -4390,7 +4390,6 @@ local function webhook ()
 	local newGems = ""
 	local TotalGems = makeComma(player._stats.gem_amount.Value)
 	local TotalGold = makeComma(player._stats.gold_amount.Value)
-	local TotalPearl = makeComma(player._stats._resourceSummerPearls.Value)
 	local TotalCandy = makeComma(player._stats._resourceCandies.Value)
 	local BattlePass = ''
 	local reachedTier = 0
@@ -4454,12 +4453,12 @@ local function webhook ()
 				['color'] = 11513855,
 				["description"] = levelAndUser,
 				['footer'] = {
-					['text'] = string.format("// Made by Ultra Hub (%s)", os.date("%X")), 
+					['text'] = string.format("// Made by MHUB (%s)", os.date("%X")), 
 				},
 				['fields'] = {
 					{
 						['name'] = "Player Stats",
-						['value'] = string.format( "<:Gems:1148368507029950515> %s\n<:Gold:1148368511463338074> %s <:Candy:1179714718613651456> %s\n\n<:Pearls:1148369019137708193> %s\n:tickets: Tier: %s", TotalGems, TotalGold, TotalCandy, TotalPearl, BattlePass,),
+						['value'] = string.format( "<:Gems:1148368507029950515> %s\n<:Gold:1148368511463338074> %s\n <:Candy:1179714718613651456> %s\n:tickets: Tier: %s", TotalGems, TotalGold, TotalCandy, TotalPearl, BattlePass,),
 						['inline'] = true
 					},
 
