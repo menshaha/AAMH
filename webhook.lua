@@ -4332,12 +4332,13 @@ end)
 
 if GetSave('Hide Map') then Hide_Map(true) HideMap.Parent.BackgroundColor3 = checkBoxColors[true] end
 
-local RareDrop = {"Sea God's Portal"}
+local RareDrop = {"Zid"}
 
 local oldPlayerStats = {
 	Gems = player._stats.gem_amount.Value,
 	Gold = player._stats.gold_amount.Value,
 	PlayerXP = player._stats.player_xp.Value,
+	Candy = player._stats._resourceCandies.Value
 }
 
 local contentNewSecretItem = ""
@@ -4390,6 +4391,7 @@ local function webhook ()
 	local TotalGems = makeComma(player._stats.gem_amount.Value)
 	local TotalGold = makeComma(player._stats.gold_amount.Value)
 	local TotalPearl = makeComma(player._stats._resourceSummerPearls.Value)
+	local TotalCandy = makeComma(player._stats._resourceCandies.Value)
 	local BattlePass = ''
 	local reachedTier = 0
 	local reachedTierExp = 0
@@ -4457,7 +4459,7 @@ local function webhook ()
 				['fields'] = {
 					{
 						['name'] = "Player Stats",
-						['value'] = string.format( "<:Gems:1148368507029950515> %s\n<:Gold:1148368511463338074> %s\n<:Pearls:1148369019137708193> %s\n:tickets: Tier: %s", TotalGems, TotalGold, TotalPearl, BattlePass),
+						['value'] = string.format( "<:Gems:1148368507029950515> %s\n<:Gold:1148368511463338074> %s <:Candy:1179714718613651456> %s\n\n<:Pearls:1148369019137708193> %s\n:tickets: Tier: %s", TotalGems, TotalGold, TotalCandy, TotalPearl, BattlePass,),
 						['inline'] = true
 					},
 
@@ -4493,7 +4495,7 @@ task.spawn(function()
 	pcall(function()
 
 		if queue_on_teleport then
-			local UltraHubSCRIPT = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/menshaha/AAMH/main/webhook.lua"))()'
+			local UltraHubSCRIPT = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/menshaha/AAMH/main/MHUB.lua"))()'
 			queue_on_teleport(UltraHubSCRIPT)
 		end
 
