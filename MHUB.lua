@@ -105,7 +105,7 @@ local DefaultFiles = {
 
 }
 
-local PortalsList = {'Alien Portal', 'Summer Portal', 'Eclipse Portal', 'Puppet Portal', "Demon Leader's Portal"}
+local PortalsList = {'Alien Portal', 'Summer Portal', 'Eclipse Portal', 'Puppet Portal', 'Port Agency', "Demon Leader's Portal"}
 local DifficultiesName = {
 	double_cost = 'High Cost',
 	fast_enemies = 'Fast Enemies',
@@ -124,6 +124,7 @@ local portalWorlds = {
 	hxhant_infinite = 'Ant Kingdom (Summer)',
 	opm_infinite = 'Alien Spaceship (Underwater)',
 	eclipse_portal = 'The Eclipse',
+    port_agencgy = 'Sky Club'
 }
 
 local Bonuses = {
@@ -474,7 +475,7 @@ PGUI = game.Players.LocalPlayer:WaitForChild('PlayerGui')
 
 -- MAKING GUI
 ScreenGui = Instance.new('ScreenGui', game.CoreGui)
-ScreenGui.Name = 'MHUB'
+ScreenGui.Name = 'Ultra Hub'
 ScreenGui.ResetOnSpawn = false
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
 ScreenGui.Enabled = true
