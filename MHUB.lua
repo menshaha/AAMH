@@ -3680,7 +3680,7 @@ end
 
 autoUseAbilityUnitsTable = {'jotaro', 'eren_final', 'ainz_evolved', 'kisuke_evolved',
 	'yamamoto_evolved', 'dio_heaven', 'aki_evolved', 'law_2_evolved', 'brook_evolved', 'gojo_evolved', 'pucci_heaven',
-	'jotaro_p6_evolved', 'homura_evolved', 'diavolo', 'armin', 'alucard_evolved', 'dazai_evolved'
+	'jotaro_p6_evolved', 'homura_evolved', 'diavolo', 'armin', 'alucard_evolved', 'dazai_evolved', 'hido_evolved'
 
 }
 usedAutoSkillTime = nil
