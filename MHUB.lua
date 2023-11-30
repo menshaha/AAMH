@@ -124,12 +124,12 @@ local portalWorlds = {
 	hxhant_infinite = 'Ant Kingdom (Summer)',
 	opm_infinite = 'Alien Spaceship (Underwater)',
 	eclipse_portal = 'The Eclipse',
-    port_agencgy = 'Sky Club'
-    morioh_halloween = 'Bizzare Town (Haunted)'
-    namek_halloween = 'Planet Namak (Haunted)'
-    magnolia_halloween = 'Magic Town (Haunted)'
-    hage_elf_halloween = 'Clover Kingdom (Demonic)'
-    marineford_halloween = "Marine's Ford (Midnight)"
+    port_agencgy = 'Sky Club',
+    morioh_halloween = 'Bizzare Town (Haunted)',
+    namek_halloween = 'Planet Namak (Haunted)',
+    magnolia_halloween = 'Magic Town (Haunted)',
+    hage_elf_halloween = 'Clover Kingdom (Demonic)',
+    marineford_halloween = "Marine's Ford (Midnight)",
     aot_halloween = "Shiganshinu District (Midnight)"
     
 }
@@ -440,7 +440,7 @@ local macroMapList = {
         "Marine's Ford (Midnight)",
         'Bizzare Town (Haunted)',
         'Planet Namak (Haunted)',
-        'Shiganshinu District (Midnight)'
+        'Shiganshinu District (Midnight)',
 		'Cursed Womb'
 	}
 }
