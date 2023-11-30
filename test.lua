@@ -4332,12 +4332,13 @@ end)
 
 if GetSave('Hide Map') then Hide_Map(true) HideMap.Parent.BackgroundColor3 = checkBoxColors[true] end
 
-local RareDrop = {"Sea God's Portal"}
+local RareDrop = {"Zid"}
 
 local oldPlayerStats = {
 	Gems = player._stats.gem_amount.Value,
 	Gold = player._stats.gold_amount.Value,
 	PlayerXP = player._stats.player_xp.Value,
+	Candy = player._stats._resourceCandies.Value
 }
 
 local contentNewSecretItem = ""
