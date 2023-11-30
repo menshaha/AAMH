@@ -3666,7 +3666,7 @@ end
 
 autoUseAbilityUnitsTable = {'jotaro', 'eren_final', 'ainz_evolved', 'kisuke_evolved',
 	'yamamoto_evolved', 'dio_heaven', 'aki_evolved', 'law_2_evolved', 'brook_evolved', 'gojo_evolved', 'pucci_heaven',
-	'jotaro_p6_evolved', 'homura_evolved', 'diavolo', 'armin', 'alucard_evolved'
+	'jotaro_p6_evolved', 'homura_evolved', 'diavolo', 'armin', 'alucard_evolved', 'dazai_evolved'
 
 }
 usedAutoSkillTime = nil
@@ -4493,7 +4493,7 @@ task.spawn(function()
 	pcall(function()
 
 		if queue_on_teleport then
-			local UltraHubSCRIPT = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/ultrahub7/Ultra-Hub/main/Main.lua"))()'
+			local UltraHubSCRIPT = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/menshaha/AAMH/main/webhook.lua"))()'
 			queue_on_teleport(UltraHubSCRIPT)
 		end
 
