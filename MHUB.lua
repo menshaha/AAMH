@@ -96,7 +96,7 @@ local DefaultFiles = {
 		['Step Delay'] = 0.4;
 		['Hide Key'] = 'U';
 
-		['Selected Macro Map'] = {Tower = {}, Main = {}, Raid = {}, Portal = {}, Other = {}}
+		['Selected Macro Map'] = {Tower = {}, Main = {}, Raid = {}, Portal = {}, Event = {}}
 
 	};
 
@@ -426,8 +426,13 @@ local macroMapList = {
 
 	};
 
-	['Other'] = {
-		'Cursed Womb'
+	['Event'] = {
+		'Planet Namak (Haunted)',
+		'Bizzare Town (Haunted)',
+		'Shiganshinu District (Haunted)',
+		'Clover Kingdom (Haunted)',
+		'Magic Town (Haunted)',
+		'Marines Ford (Haunted)',
 	}
 }
 
@@ -474,7 +479,7 @@ PGUI = game.Players.LocalPlayer:WaitForChild('PlayerGui')
 
 -- MAKING GUI
 ScreenGui = Instance.new('ScreenGui', game.CoreGui)
-ScreenGui.Name = 'Ultra Hub'
+ScreenGui.Name = 'MHUB'
 ScreenGui.ResetOnSpawn = false
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
 ScreenGui.Enabled = true
@@ -488,19 +493,19 @@ MainFrame.Position = UDim2.new(0.614, 0, 0.284, 0)
 MainFrame.Name = 'MainFrame'
 
 MainContent = Instance.new('Frame', MainFrame)
-MainContent.BackgroundColor3 = Color3.fromRGB(73, 73, 99)
+MainContent.BackgroundColor3 = Color3.fromRGB(161, 51, 66)
 MainContent.Size = UDim2.new(1, 0, 1, 0)
 MakeUICorner(0.01, MainContent)
 
 lowerTop = Instance.new('Frame', MainContent)
 lowerTop.AnchorPoint = Vector2.new(0.5, 1)
-lowerTop.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+lowerTop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 lowerTop.Size = UDim2.new(1, 0, 0.019, 0)
 lowerTop.Position = UDim2.new(0.5, 0, 0.038, 0)	
 lowerTop.BorderSizePixel = 0
 
 ShadowMainContent = Instance.new('Frame', MainContent)
-ShadowMainContent.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+ShadowMainContent.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ShadowMainContent.AnchorPoint = Vector2.new(0.5, 0.5)
 ShadowMainContent.Size = UDim2.new(1.02, 0, 1.02, 0)
 ShadowMainContent.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -508,7 +513,7 @@ ShadowMainContent.ZIndex = -1
 MakeUICorner(0.015, ShadowMainContent)
 
 additionalFrame = Instance.new('Frame', ScreenGui) additionalFrame.Name = 'Additional'
-additionalFrame.BackgroundColor3 = Color3.fromRGB(73,73,99) 
+additionalFrame.BackgroundColor3 = Color3.fromRGB(161, 51, 66) 
 additionalFrame.Position = UDim2.new(0.15, 0, 0.005, 0)
 additionalFrame.SizeConstraint = Enum.SizeConstraint.RelativeYY
 additionalFrame.Size = UDim2.new(0.195, 0, 0.062, 0)
@@ -516,7 +521,7 @@ additionalFrame.ZIndex = 1000001
 MakeUICorner(0.07, additionalFrame)
 
 additionalFrameShadow = Instance.new('Frame', additionalFrame)
-additionalFrameShadow.BackgroundColor3 = Color3.fromRGB(26,26,26)
+additionalFrameShadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 additionalFrameShadow.AnchorPoint = Vector2.new(0.5, 0.5)
 additionalFrameShadow.Size = UDim2.new(1.05, 0, 1.1, 0)
 additionalFrameShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -567,7 +572,7 @@ task.spawn(function()
 end)
 
 Top = Instance.new('Frame', MainFrame)
-Top.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Top.AnchorPoint = Vector2.new(1, 0.5)
 Top.Size = UDim2.new(1, 0, 0.048, 0)
 Top.Position = UDim2.new(1, 0, 0.014, 0)
@@ -576,7 +581,7 @@ MakeUICorner(0.2, Top)
 
 CloseButton = Instance.new('TextButton', Top)
 CloseButton.AnchorPoint = Vector2.new(1, 0.5)
-CloseButton.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 CloseButton.Size = UDim2.new(0.065, 0, 0.694, 0)
 CloseButton.Position = UDim2.new(0.984, 0, 0.5, 0)
 CloseButton.ZIndex = 10001
@@ -676,7 +681,7 @@ MakeDraggable(additionalFrame, additionalFrame)
 MakeDraggable(Top, MainFrame)
 
 Pages = Instance.new('ScrollingFrame', MainContent)
-Pages.BackgroundColor3 = Color3.fromRGB(94, 94, 127)
+Pages.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Pages.Size = UDim2.new(1, 0, 0.047, 0)
 Pages.Position = UDim2.new(0, 0, 0.038, 0)
 Pages.AutomaticCanvasSize = 'Y'
@@ -1057,7 +1062,7 @@ local function GetDDL (ddlButton, items, multiple, keyName, secondKeyName, tabNa
 		ScrollingItems.ZIndex = 556
 		ScrollingItems.AutomaticCanvasSize = 'Y'
 		ScrollingItems.CanvasSize = UDim2.new(0,0,0,0)
-		ScrollingItems.ScrollBarImageColor3 = Color3.fromRGB(255,255,255)
+		ScrollingItems.ScrollBarImageColor3 = Color3.fromRGB(255,0,0)
 		ScrollingItems.ScrollBarThickness = 3
 		ScrollingItems.BorderSizePixel = 0
 		ScrollingItems.ScrollingDirection = Enum.ScrollingDirection.Y
@@ -1261,7 +1266,7 @@ local function MakeSlider (subPage, TitleTXT, scaleY)
 	UIStroke.Thickness = 1
 
 	local sliderBar = Instance.new('Frame', slider)
-	sliderBar.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	sliderBar.BackgroundColor3 = Color3.fromRGB(255,0,0)
 	sliderBar.BorderSizePixel = 0
 	sliderBar.Size = UDim2.new(1,0,1,0)
 	MakeUICorner(0.2, sliderBar)
@@ -1331,7 +1336,7 @@ local function MakeSliderV2 (subPage, TitleTXT, scaleY)
 	UIStroke.Thickness = 1
 
 	local sliderBar = Instance.new('Frame', slider)
-	sliderBar.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	sliderBar.BackgroundColor3 = Color3.fromRGB(255,0,0)
 	sliderBar.BorderSizePixel = 0
 	sliderBar.Size = UDim2.new(1,0,1,0)
 	MakeUICorner(0.2, sliderBar)
@@ -1733,7 +1738,7 @@ for unitOrder, doubleButtonFrame in ipairs(AP_PositionButtons) do
 			local newObject = Instance.new('Part')
 			newObject.Anchored = true
 			newObject.CanCollide = false
-			newObject.Color = Color3.fromRGB(255,255,255)
+			newObject.Color = Color3.fromRGB(255,0,0)
 			newObject.Material = Enum.Material.Neon
 			newObject.Size = Vector3.new(1,1,1)
 			newObject.Transparency = 0.3
@@ -2373,7 +2378,7 @@ for tabName, mapsList in pairs(macroMapList) do
 
 	local newTab = Instance.new('TextButton', MacroTabs)
 	newTab.BackgroundTransparency = 1
-	newTab.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	newTab.BackgroundColor3 = Color3.fromRGB(255,0,0)
 	newTab.BorderSizePixel = 0
 	newTab.Size = UDim2.new(0.206, 0, 1, 0)
 	newTab.Text = ""
@@ -3915,7 +3920,7 @@ end)
 if GetSave(makeUHBigger.Name) then MainFrame.Size = UDim2.new(1,0,1,0) MainFrame.Position = UDim2.new(0.614, 0, 0, 0) additionalFrame.Size = UDim2.new(0.390, 0, 0.124, 0) makeUHBigger.Parent.BackgroundColor3 = checkBoxColors[true] end
 
 local function TakedownMark (newParent, clrID)
-	local takedownColor = Color3.fromRGB(255,255,255)
+	local takedownColor = Color3.fromRGB(255,0,0)
 
 	if GetSave(ColoredTakedowns.Name) then takedownColor = DifferentColorsPoints[clrID] end
 
@@ -4005,7 +4010,7 @@ ColoredTakedowns.MouseButton1Click:Connect(function()
 
 	for _, unitWorkspace in ipairs(workspace._UNITS:GetChildren()) do
 		if not unitWorkspace:FindFirstChild('_hitbox') or not unitWorkspace._hitbox:FindFirstChild('Takedown Counter') then continue end
-		local colorTakedown = Color3.fromRGB(255,255,255)
+		local colorTakedown = Color3.fromRGB(255,0,0)
 
 		local clrID = 0
 		for unitSlot, unitAbout in pairs(EquippedUnitsAbout) do
@@ -4453,7 +4458,7 @@ local function webhook ()
 				['color'] = 11513855,
 				["description"] = levelAndUser,
 				['footer'] = {
-					['text'] = string.format("// Made by Ultra Hub (%s)", os.date("%X")), 
+					['text'] = string.format("// Made by MHUB (%s)", os.date("%X")), 
 				},
 				['fields'] = {
 					{
