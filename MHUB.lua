@@ -125,6 +125,13 @@ local portalWorlds = {
 	opm_infinite = 'Alien Spaceship (Underwater)',
 	eclipse_portal = 'The Eclipse',
     port_agencgy = 'Sky Club'
+    morioh_halloween = 'Bizzare Town (Haunted)'
+    namek_halloween = 'Planet Namak (Haunted)'
+    magnolia_halloween = 'Magic Town (Haunted)'
+    hage_elf_halloween = 'Clover Kingdom (Demonic)'
+    marineford_halloween = "Marine's Ford (Midnight)"
+    aot_halloween = "Shiganshinu District (Midnight)"
+    
 }
 
 local Bonuses = {
@@ -428,6 +435,12 @@ local macroMapList = {
 	};
 
 	['Other'] = {
+        'Magic Town (Haunted)',
+        'Clover Kingdom (Demonic)',
+        "Marine's Ford (Midnight)",
+        'Bizzare Town (Haunted)',
+        'Planet Namak (Haunted)',
+        'Shiganshinu District (Midnight)'
 		'Cursed Womb'
 	}
 }
@@ -4362,7 +4375,7 @@ local function webhook ()
 		{name = 'XP', amount = player._stats.player_xp.Value - oldPlayerStats.PlayerXP},
 		{name = 'Gems', amount = player._stats.gem_amount.Value - oldPlayerStats.Gems},
 		{name = 'Gold', amount = player._stats.gold_amount.Value - oldPlayerStats.Gold},
-		{name = 'Halloween Candy', amount = player._stats._resourceCandies.Value - oldPlayerStats.Candy},
+		{name = 'Candy', amount = player._stats._resourceCandies.Value - oldPlayerStats.Candy},
 
 	}
 
