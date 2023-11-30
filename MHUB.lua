@@ -390,7 +390,7 @@ local macroMapList = {
 
 	};
 
-	['Tower'] = {'Thriller Park', 'Entertainment District', 'Karakora Town', 'Storm Hideout', 'Infinity Train',};
+	['Tower'] = {'Thriller Park', 'Entertainment District', 'West City', 'Devil City', 'Karakora Town', 'Storm Hideout', 'Infinity Train',};
 
 	['Raid'] = {
 		'Fabled Kingdom (Commandments)',
@@ -405,7 +405,6 @@ local macroMapList = {
 		'Storm Hideout (Final)',
 		'West City',
 		'Bizzare Town',
-
 		'Hidden Sand Village',
 		'Shiganshinu District',
 		'Undead Tomb'
@@ -422,6 +421,7 @@ local macroMapList = {
 		'Cursed Academy (Summer)',
 		'Fabled Kingdom (Cube)',
 		'The Eclipse',
+        'Port Agency',
 		'Alien Spaceship (Final)',
 		'Puppet Island (Birdcage)'
 
