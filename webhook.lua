@@ -4360,7 +4360,6 @@ local function webhook ()
 		{name = 'XP', amount = player._stats.player_xp.Value - oldPlayerStats.PlayerXP},
 		{name = 'Gems', amount = player._stats.gem_amount.Value - oldPlayerStats.Gems},
 		{name = 'Gold', amount = player._stats.gold_amount.Value - oldPlayerStats.Gold},
-		{name = 'Summer Pearls', amount = player._stats._resourceSummerPearls.Value - oldPlayerStats.Pearls},
 
 	}
 
