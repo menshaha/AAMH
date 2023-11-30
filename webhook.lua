@@ -4337,7 +4337,6 @@ local RareDrop = {"Sea God's Portal"}
 local oldPlayerStats = {
 	Gems = player._stats.gem_amount.Value,
 	Gold = player._stats.gold_amount.Value,
-	Pearls = player._stats._resourceSummerPearls.Value,
 	PlayerXP = player._stats.player_xp.Value,
 }
 
