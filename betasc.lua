@@ -1,6 +1,6 @@
 -- Function to get HWID from the website
 function GetHWID()
-    local url = "https://example.com/getHWID" -- Replace with your actual URL
+    local url = "https://pastebin.com/raw/pbQ0vtLZ" -- Replace with your actual URL
     local response = game:HttpGet(url)
     return response
 end
@@ -17,7 +17,7 @@ end
 
 -- Fetch Whitelisted HWIDs from the website
 function GetWhitelistedHWIDs()
-    local url = "https://example.com/getWhitelistedHWIDs" -- Replace with your actual URL
+    local url = "https://pastebin.com/raw/pbQ0vtLZ" -- Replace with your actual URL
     local response = game:HttpGet(url)
     
     if response then
@@ -46,6 +46,7 @@ local isWhitelisted = CheckHWID(HWID, WhitelistedHWIDs)
 -- If the HWID is whitelisted, execute the script
 if isWhitelisted then
     print("Correct HWID, Good Luck!")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/provdota9/MHUB/main/Beta.lua"))()
 else
-    game.Players.LocalPlayer:Kick("invalid HWID.\nhttps://discord.gg/Qvz4aGExCG")
+    game.Players.LocalPlayer:Kick("\ninvalid HWID.\nhttps://discord.gg/Qvz4aGExCG")
 end
