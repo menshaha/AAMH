@@ -46,7 +46,6 @@ local isWhitelisted = CheckHWID(HWID, WhitelistedHWIDs)
 -- If the HWID is whitelisted, execute the script
 if isWhitelisted then
     print("Correct HWID, Good Luck!")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/provdota9/MHUB/main/Beta.lua"))()
 else
     game.Players.LocalPlayer:Kick("invalid HWID.\nhttps://discord.gg/Qvz4aGExCG")
 end
