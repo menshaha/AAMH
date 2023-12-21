@@ -1,23 +1,53 @@
--- HWID Whitelist
+local whitelistedbro = false
 
-local HWID = game:GetService("RbxAnalyticsService"):GetClientId();
-local WhitelistedHWIDs = {"","",""}
-local WhitelistedGuy = false
+function GetHWID()
+    local url = "https://pastebin.com/raw/pbQ0vtLZ" -- Replace with your actual URL
+    local response = game:HttpGet(url)
+    return response
+end
 
-function CheckHWID(hwidval)
-for _,whitelisted in pairs(WhitelistedHWIDs) do
- if hwidval == whitelisted then
-     return true
- elseif hwidval ~= whitelisted then
-     return false
-       end
+-- Check if the obtained HWID is whitelisted
+function CheckHWID(hwidval, whitelistedHWIDs)
+    for _, whitelisted in pairs(whitelistedHWIDs) do
+        if hwidval == whitelisted then
+            return true
+		else
+			return false
+		end
+	end
+end
+
+-- Fetch Whitelisted HWIDs from the website
+function GetWhitelistedHWIDs()
+    local url = "https://pastebin.com/raw/pbQ0vtLZ" -- Replace with your actual URL
+    local response = game:HttpGet(url)
+    
+    if response then
+        local whitelistedHWIDs = {}
+        
+        -- Parse the response to extract HWIDs (assuming one HWID per line)
+        for hwid in response:gmatch("[^\r\n]+") do
+            table.insert(whitelistedHWIDs, hwid)
+        end
+        
+        return whitelistedHWIDs
+    else
+        return {}  -- Return an empty table if the request fails
     end
 end
 
-WhitelistedGuy = CheckHWID(HWID)
+-- Get HWID from the website
+local HWID = GetHWID()
 
-if WhitelistedGuy == true then
-	print('Correct hwid')
+-- Fetch Whitelisted HWIDs from the website
+local WhitelistedHWIDs = GetWhitelistedHWIDs()
+
+-- Check if the obtained HWID is whitelisted
+local isWhitelisted = CheckHWID(HWID, WhitelistedHWIDs)
+
+-- If the HWID is whitelisted, execute the script
+if isWhitelisted then
+    print("Correct HWID, Good Luck!")
 else
-	warn('no')
+    game.Players.LocalPlayer:Kick("\ninvalid HWID.\nhttps://discord.gg/Qvz4aGExCG")
 end
